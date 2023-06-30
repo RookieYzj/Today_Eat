@@ -1,0 +1,36 @@
+/* pages/message.wxss */
+.text1{
+  color: #70DB93; 
+  font-size: 50px; 
+  transform-origin:50% 50%;
+  position: absolute;
+  transform: rotate(30deg);
+}
+.text2{
+  color: #5F9F9F; 
+  font-size: 40px; 
+  transform-origin:50% 50%;
+  position: absolute;
+  transform: rotate(330deg);
+}
+.text3{
+  color: #8E236B; 
+  font-size: 30px; 
+  transform-origin:50% 50%;
+  position: absolute;
+  transform: rotate(0deg);
+}
+.text4{
+  color: #9370DB; 
+  font-size: 20px; 
+  transform-origin:50% 50%;
+  position: absolute;
+  transform: rotate(30deg);
+}
+.text5{
+  color: #CFB53B; 
+  font-size: 20px; 
+  transform-origin:50% 50%;
+  position: absolute;
+  transform: rotate(330deg);
+}

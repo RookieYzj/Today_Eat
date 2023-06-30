@@ -1,0 +1,29 @@
+<import src="../../template/baseNavigationBar.wxml"/>
+<wxs module="filter" src="../order/toFixed.wxs"></wxs>
+
+<template is="navigationBar" data="{{...item}}"></template>
+ 
+<view class="goods_msg" wx:for="{{cartList}}">
+    <view class="goods_img" ><image src="{{cartList[index].image}}" mode="widthFix"></image></view>
+    <view class="goods_img" >{{cartList[index].title}}</view>
+    <view class="goods_content">共{{cartList[index].quantity}}件 <text class="iconfont icon-arrowright"></text></view>
+    <view class="goods_content">共{{filter.numberToFixed(cartList[index].quantity*cartList[index].price,2)}}元 <text class="iconfont icon-arrowright"></text></view>
+</view>
+ 
+<view class="msg_list">
+    <view class="msg_item">
+        <view>商品原价</view>
+        <view>￥{{sum_price}}</view>
+    </view>
+    <view class="msg_item">
+        <view>就餐方式</view>
+        <view>堂食</view>
+    </view>
+    <view class="msg_item">
+        <view>商品优惠</view>
+        <view>-￥0</view>
+    </view>
+    <view class="Total">
+       合计 <text class="Total_price">￥{{sum_price}}</text>
+    </view>
+</view>

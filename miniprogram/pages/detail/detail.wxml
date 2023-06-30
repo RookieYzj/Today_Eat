@@ -1,0 +1,62 @@
+<!--pages/goods1/goods1.wxml-->
+<!--商品幻灯片-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner"
+  duration="{{duration}}" circular="{{duration}}">
+  <block>
+    <swiper-item>
+      <image src="{{goods_img}}" class="slide-image" mode="aspectFill" data-src='{{imghref}}{{goods_img}}'
+        bindtap="previewImage" />
+    </swiper-item>
+  </block>
+</swiper>
+<!--商品幻灯片 end-->
+<view class="info-price clear">
+  <view class='price'>￥{{goods_price}} </view>
+  <view class='fenxiang'>
+    <button class='fxbtn' open-type="share">
+      <view style='height:20px;margin-top:8px;'>
+        <image src="{{goods_img}}" ></image>
+      </view>
+      <view>分享</view>
+    </button>
+  </view>
+</view>
+<view class="info-title">
+  <view wx:if="{{collection==false}}"> 
+    <view  bindtap="addcollection" style="width: 132rpx; height: 51rpx; display: block; box-sizing: border-box; position: relative; left: 540rpx; top: -34rpx">
+    <l-icon name="favor" color="#FFE57F"style="position: relative; left: 0rpx; top: 0rpx"></l-icon>
+    <text style="font-size: 20px; position: relative; left: 44rpx; top: -43rpx">收藏</text>
+    </view>
+    <text style="font-size: 20px; position: relative; left: 0rpx; top: -34rpx">{{goods_title}}</text>
+  </view>
+  <view wx:else> 
+    <view   bindtap="deletecollection" style="width: 132rpx; height: 51rpx; display: block; box-sizing: border-box; position: relative; left: 540rpx; top: -34rpx">
+    <l-icon name="favor" color="#F4516C" style="position: relative; left: 0rpx; top: 0rpx"></l-icon>
+    <text style="font-size: 20px; position: relative; left: 44rpx; top: -43rpx">已收藏</text>
+    </view>
+    <text style="font-size: 20px; position: relative; left: 0rpx; top: -34rpx">{{goods_title}}</text>
+ </view>
+ 
+</view>
+
+<view style="border-top:1px solid #F6F6F6;background: #fff; padding:5px 15px;">
+  <view class="clearfix flex grey gridXt" style="position: relative; left: 0rpx; top: -22rpx">
+    <text class="sub">
+      <block wx:if='{{goods_yunfei==0.00}}'>运费：包邮</block>
+      <block wx:else>运费：{{goods_yunfei}}</block>
+    </text>
+    <text class="sub">库存：{{goods_kucun}}</text>
+    <text class="sub">销量：{{goods_xiaoliang}}</text>
+  </view>
+</view>
+<!--商品详情-->
+<view class='details_box'>
+  <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+    <view>商品详情</view>
+  </view>
+  <view style='padding:10px 0px;'>
+    <view class="wxParse">
+      {{content}}
+    </view>
+  </view>
+</view>

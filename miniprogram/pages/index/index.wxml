@@ -1,0 +1,18 @@
+<!-- 搜索框view -->
+<view class="search_con" style="width: 584rpx; height: 0rpx; display: block; box-sizing: border-box">
+
+<!-- 表单 -->
+ <form bindsubmit="formSubmit" style="position: relative; left: 0rpx; top: -85rpx">
+  <input style="width: 537rpx; height: 55rpx; display: block; box-sizing: border-box; position: relative; left: -39rpx; top: 0rpx" type="text" name="keyword" class="search_input" placeholder='你要找什么呢？'/>
+  <button formType="submit" class="search_btn" style="width: 139rpx; height: 55rpx; display: block; box-sizing: border-box; left: 277rpx; top: -81rpx; position: relative">搜索</button>  
+ </form>
+</view>
+
+
+<view wx:for="{{re}}" wx:key="re" class="search_result">
+ <view class="empty">{{item.empty}}</view>
+ <view class="resname">{{item.resname}}</view>
+ <view class="noresult">{{item.noresult}}</view>
+</view>
+<l-tab-bar list="{{list}}" />
+<l-water-flow bindtap="gotoDetail" bind="linconfirm" generic:l-water-flow-item="l-demo"/>

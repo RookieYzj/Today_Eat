@@ -1,0 +1,13 @@
+<!-- demo.wxml -->
+<l-card full type="cover" image="{{data.image}}" title="{{data.goods_name}}" l-class="life-container" l-img-class="life-img" l-title-class="life-title" bindtap="onProduct">
+  <view class='life-product-contianer'>
+    <!--<view class='art-content'>{{data.describe}}</view>-->
+    <view class='price-container'>
+      <l-price unit="￥" value="{{data.price}}" value-color="#ad0e11" unit-color="#ad0e11" value-size="36"></l-price>
+      <l-price l-class="del-price" unit="￥" value="{{data.price}}" value-color="#ad0e11" unit-color="#ad0e11" deleted del-color="#666" value-color="#666" unit-color="#666"></l-price> 
+      <button bindtap="addshopcar" style="width: 127rpx; height: 121rpx; display: block; box-sizing: border-box; left: 103rpx; top: 0rpx; position: relative">
+        <l-icon style="position: relative; left: 0rpx; top: -15rpx" size="70" name="cart"/>
+      </button>
+    </view>
+  </view>
+</l-card>

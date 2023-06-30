@@ -1,0 +1,7 @@
+<text class="text1"style=" width: 241rpx; height: 71rpx; display: block; box-sizing: border-box; position: relative; left: 297rpx; top: 416rpx" style="position: relative; left: 399rpx; top: 139rpx; width: 272rpx; height: 51rpx; display: block; box-sizing: border-box">{{cartList[4]}}</text>
+<text class="text2"style="width: 241rpx; height: 71rpx; display: block; box-sizing: border-box" style="position: absolute; left: 44rpx; top: 220rpx">{{cartList[3]}}</text>
+<text class="text3"style="width: 241rpx; height: 71rpx; display: block; box-sizing: border-box" style="position: absolute; left: 297rpx; top: 600rpx">{{cartList[2]}}</text>
+<text class="text4"style="width: 204rpx; height: 71rpx; display: block; box-sizing: border-box" style="position: absolute; left: 106rpx; top: 509rpx">{{cartList[1]}}</text>
+<text class="text5" style="width: 186rpx; height: 71rpx; display: block; box-sizing: border-box; position: absolute; left: 518rpx; top: 385rpx">{{cartList[0]}}</text>
+<button bindtap="point" style="position: relative; left: 0rpx; top: 242rpx"><l-button plain="{{true}}">点击推荐菜品</l-button></button>
+<l-tab-bar list="{{list}}" />

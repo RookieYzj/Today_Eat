@@ -1,0 +1,5 @@
+//四舍五入保留num位小数
+var numberToFixed = function (value, num) {
+  return value.toFixed(num)
+}
+module.exports.numberToFixed = numberToFixed

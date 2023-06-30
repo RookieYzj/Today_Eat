@@ -1,0 +1,60 @@
+<!--pages/icon/icon.wxml-->
+<view style="width: 750rpx; height: 200rpx; display: block; box-sizing: border-box">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 登录 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+    <view class="usericon"> 
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> 
+    <text class="userinfo-nickname">{{name}}</text>
+    <text style="font-size: 20px; left: 20px;">余额：¥{{money}}</text>
+    </view>
+    
+      
+    </block>
+</view>
+<l-list title="我的订单" icon="order" url="../allorder/allorder?openid={{openid}}"/>
+<l-list title="消息" icon="notification" />
+<view bindtap="showmodelname"><l-list title="修改用户名" icon="user" /></view>
+<view bindtap="showmodel"><l-list title="修改密码" icon="password" /></view>
+<l-list title="客服反馈" icon="help" />
+
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModalname}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModalname}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>修改用户名</text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" bindinput='wish_put' placeholder='请输入旧密码' placeholder-class="holder_cls" class='wish_put'></input>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" bindinput='wish_put2' placeholder='请输入新用户名' placeholder-class="holder_cls" class='wish_put'></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='changename'>确认修改</view>
+</view>
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>修改支付密码</text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" bindinput='wish_put' placeholder='请输入旧密码' placeholder-class="holder_cls" class='wish_put'></input>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" bindinput='wish_put2' placeholder='请输入新密码' placeholder-class="holder_cls" class='wish_put'></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='name'>确认修改</view>
+</view>
+
+<l-tab-bar list="{{list}}" />

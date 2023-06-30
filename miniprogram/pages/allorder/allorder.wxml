@@ -1,0 +1,57 @@
+ 
+ 
+<view wx:if="{{!isCartEmpty}}">
+	<view class="cart-item" wx:for="{{orderList}}">
+		<!-- 商品列表部分布局 -->
+		<view class="item-box item-goods">
+			<view class="goods-info">
+				<!-- 商品信息部分布局 -->
+				<view class="goods-info-details">
+        <view>
+        	<view style="font-size: 28rpx; color: #3C3C3C; position: relative;  float: right;left: 0rpx; top: 27rpx">订单号：{{orderList[index]._id}}</view>
+					<view style="font-size: 25rpx; color: #3C3C3C; position: relative; float: right;left: 0rpx; top: 27rpx">订单时间：{{orderList[index].time}}</view>
+					</view>
+ 
+					<!-- 商品价格、数量布局 -->
+					<view class="goods-price-quantity">
+						<view>
+							<text>￥{{orderList[index].sum_price}}</text>
+						</view>
+						<view class="goods-quantity-switch-box">
+              <view bindtap="gotoOrder" data-order="{{index}} "data-price="{{orderList[index].sum_price}}">查看订单>
+              </view>
+						</view>
+ 
+					</view>
+ 
+				</view>
+ 
+			</view>
+ 
+		</view>
+ 
+	</view>
+ 
+	<view style="height: 181rpx; width: 750rpx; display: block; box-sizing: border-box"></view>
+ 
+
+ 
+ 
+</view>
+ 
+<block wx:else>
+	<view class="catnone">
+		<image src="../../assets/images/cart_none_a.png" mode="widthFix"></image>
+		<view class="catnone-text">您的购物车还是空的，快去买买买吧!</view>
+	</view>
+	<view class="cart-recommend">
+		<block wx:for="{{recommends}}" wx:key="index">
+			<view class="recommend-item">
+				<image class="item-img" src="{{item.image}}" mode="widthFix"></image>
+				<view class="item-text">{{item.text}}</view>
+				<view class="item-price">{{item.price}}</view>
+			</view>
+		</block>
+	</view>
+</block>
+
